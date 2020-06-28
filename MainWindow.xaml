@@ -25,11 +25,13 @@
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
-
+        
         <Style TargetType="TextBlock" x:Key="Heading">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="#edf2f7"/>
             <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontFamily" Value="/resources/fonts/#Roboto Mono"/>
+            <Setter Property="FontWeight" Value="500"/>
         </Style>
 
     </Window.Resources>
@@ -42,54 +44,39 @@
             </LinearGradientBrush>
         </ScrollViewer.Background>
 
-        <Grid>
-            <StackPanel>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="2*"/>
-                    </Grid.ColumnDefinitions>
-
-                    <TextBlock Style="{StaticResource Heading}"
-                       Text="Movie List Rip-Off" HorizontalAlignment="Left" FontSize="30"
-                       Margin="30, 25, 30, 0"/>
-
-                    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="1">
-
-                        <Border Style="{StaticResource NavigationBorder}">
-                            <Button Style="{StaticResource NavigationButton}" Content="Movies"/>
-                        </Border>
-
-                        <Border Style="{StaticResource NavigationBorder}">
-                            <Button Style="{StaticResource NavigationButton}" Content="TV shows"/>
-                        </Border>
-
-                        <Border Style="{StaticResource NavigationBorder}">
-                            <Button Style="{StaticResource NavigationButton}" Content="search"/>
-                        </Border>
-
-                        <Border Style="{StaticResource NavigationBorder}">
-                            <Button Style="{StaticResource NavigationButton}" Content="Press To Praise Our Corporate Overlords"/>
-                        </Border>
-                    </StackPanel>
-                </Grid>
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
 
                 <TextBlock Style="{StaticResource Heading}"
-                           Margin="100, 50, 0, 0"
-                           Text="Popular Movies" FontSize="25"/>
+                       Text="MyEntertainmentList" HorizontalAlignment="Left" FontSize="25"
+                       Margin="30, 25, 30, 0" x:Name="testtitle"/>
 
-                <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled" Margin="100, 0, 100, 0">
-                    <StackPanel Orientation="Horizontal" x:Name="PopularmoviesStackpanel">
-                        
-                    </StackPanel>
-                </ScrollViewer>
-                
-                <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled" Margin="100, 0, 100, 0">
-                    <StackPanel Orientation="Horizontal" x:Name="PopulaTVshowsStackpanel">
-                        
-                    </StackPanel>
-                </ScrollViewer>
-            </StackPanel>
-        </Grid>
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="1">
+
+                    <Border Style="{StaticResource NavigationBorder}">
+                        <Button Style="{StaticResource NavigationButton}" Content="Movies"/>
+                    </Border>
+
+                    <Border Style="{StaticResource NavigationBorder}">
+                        <Button Style="{StaticResource NavigationButton}" Content="TV shows"/>
+                    </Border>
+
+                    <Border Style="{StaticResource NavigationBorder}">
+                        <Button Style="{StaticResource NavigationButton}" Content="search"/>
+                    </Border>
+
+                    <Border Style="{StaticResource NavigationBorder}">
+                        <Button Style="{StaticResource NavigationButton}" Content="Press To Praise Our Corporate Overlords"/>
+                    </Border>
+                </StackPanel>
+            </Grid>
+
+            <Frame x:Name="MainContentFrame"/>
+
+        </StackPanel>
     </ScrollViewer>
 </Window>

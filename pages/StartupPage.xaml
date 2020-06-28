@@ -1,0 +1,43 @@
+﻿<Page x:Class="movie_list_ripoff.pages.StartupPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:movie_list_ripoff.pages"
+      mc:Ignorable="d" 
+      Title="StartupPage">
+
+    <Page.Resources>
+        <Style TargetType="TextBlock" x:Key="Heading">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#edf2f7"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontFamily" Value="/resources/fonts/#Roboto Mono"/>
+            <Setter Property="FontWeight" Value="500"/>
+        </Style>
+
+        <Style TargetType="ScrollViewer" x:Key="HorizontalScroll">
+            <Setter Property="HorizontalScrollBarVisibility" Value="Visible"/>
+            <Setter Property="VerticalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="Margin" Value="100, 0, 100, 0"/>
+        </Style>
+    </Page.Resources>
+    
+    <StackPanel>
+        <TextBlock Style="{StaticResource Heading}"
+                           Margin="100, 50, 0, 0"
+                           Text="Popular Movies" FontSize="20"/>
+
+        <ScrollViewer Style="{StaticResource HorizontalScroll}">
+            <StackPanel Orientation="Horizontal" x:Name="PopularmoviesStackpanel"/>
+        </ScrollViewer>
+
+        <TextBlock Style="{StaticResource Heading}"
+                           Margin="100, 50, 0, 0"
+                           Text="Popular TV shows" FontSize="20"/>
+
+        <ScrollViewer Style="{StaticResource HorizontalScroll}">
+            <StackPanel Orientation="Horizontal" x:Name="PopulaTVshowsStackpanel"/>
+        </ScrollViewer>
+    </StackPanel>
+</Page>

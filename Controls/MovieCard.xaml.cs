@@ -20,15 +20,23 @@ namespace movie_list_ripoff.Controls
     /// </summary>
     public partial class MovieCard : UserControl
     {
-        public MovieCard(BitmapImage image, string name, string rating, string date)
+        public MovieCard(BitmapImage image, string name = "NAME NOT FOUND", string rating = "RATING NOT FOUND", string date = "DATE NOT FOUND")
         {
             InitializeComponent();
-
 
             Image.Source = image;
             MovieName.Text = name;
             Rating.Text = rating;
             ReleaseDate.Text = date;
+        }
+        public MovieCard()
+        {
+            InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

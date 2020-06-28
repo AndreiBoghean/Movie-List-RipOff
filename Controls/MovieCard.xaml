@@ -4,14 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:movie_list_ripoff.Controls"
-             mc:Ignorable="d">
-    <UserControl.Resources>
+             mc:Ignorable="d" Margin="0, 0, 50, 0">
+<UserControl.Resources>
 
         <Style TargetType="StackPanel" x:Key="MovieEntryStackPanel">
-            <Setter Property="Width" Value="250"/>
-            <Setter Property="Height" Value="560"/>
             <Setter Property="Background" Value="#3c366b"/>
-            <Setter Property="Margin" Value="0, 0, 50, 0"/>
             <Setter Property="OpacityMask">
                 <Setter.Value>
                     <VisualBrush>
@@ -47,22 +44,29 @@
         </Style>
 
         <Style TargetType="TextBlock">
-            <Setter Property="Foreground" Value="#A0AEC0"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="#A0AEC0"/>
             <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontFamily" Value="/resources/fonts/#Roboto Mono"/>
+            <Setter Property="FontWeight" Value="500"/>
         </Style>
 
     </UserControl.Resources>
-    <StackPanel Style="{StaticResource MovieEntryStackPanel}">
-        <Image
+
+    <Button Background="Transparent" BorderThickness="0" Click="Button_Click">
+        <StackPanel Style="{StaticResource MovieEntryStackPanel}" Width="250" Height="550">
+            <Image
             x:Name="Image"
-            Source="https://image.tmdb.org/t/p/w300/aQvJ5WPzZgYVDrxLX4R6cLJCEaQ.jpg"
+            Source="https://image.tmdb.org/t/p/w500/aQvJ5WPzZgYVDrxLX4R6cLJCEaQ.jpg"
             VerticalAlignment="Center" Height="425"
             Stretch="UniformToFill" HorizontalAlignment="Center"
                                            />
 
-        <TextBlock x:Name="MovieName" Text="sanic the bush-hog"/>
-        <TextBlock x:Name="Rating" Text="6.9" Margin="0, 5"/>
-        <TextBlock x:Name="ReleaseDate" Margin="0, 25, 0, 0" Foreground="Black" Text="6/9/420"/>
-    </StackPanel>
+            <TextBlock x:Name="MovieName" Text="sanic the bush-hog" Margin="0, 5, 0, 0"/>
+            <TextBlock x:Name="Rating" Text="6.9" Margin="0, -5, 0, 15"/>
+            <TextBlock x:Name="ReleaseDate" Foreground="Black" Text="6/9/420"/>
+        </StackPanel>
+    </Button>
+    
 </UserControl>
