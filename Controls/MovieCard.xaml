@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="movie_list_ripoff.Controls.MovieCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:movie_list_ripoff.Controls"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+
+        <Style TargetType="StackPanel" x:Key="MovieEntryStackPanel">
+            <Setter Property="Width" Value="250"/>
+            <Setter Property="Height" Value="560"/>
+            <Setter Property="Background" Value="#3c366b"/>
+            <Setter Property="Margin" Value="0, 0, 50, 0"/>
+            <Setter Property="OpacityMask">
+                <Setter.Value>
+                    <VisualBrush>
+                        <VisualBrush.Visual>
+                            <Path Fill="#FF000000" StrokeThickness="1">
+                                <Path.Data>
+                                    <PathGeometry>
+                                        <PathGeometry.Figures>
+                                            <PathFigureCollection>
+                                                <PathFigure  StartPoint="10,0">
+                                                    <PathFigure.Segments>
+                                                        <PathSegmentCollection>
+                                                            <LineSegment Point="240, 0" />
+                                                            <BezierSegment Point1="240, 0" Point2="250, 0" Point3="250, 10"/>
+                                                            <LineSegment Point="250, 550"/>
+                                                            <BezierSegment Point1="250, 550" Point2="250, 560" Point3="240, 560"/>
+                                                            <LineSegment Point="10, 560"/>
+                                                            <BezierSegment Point1="10, 560" Point2="0, 560" Point3="0, 550"/>
+                                                            <LineSegment Point="0, 10" />
+                                                            <BezierSegment Point1="0, 10" Point2="0, 0" Point3="10, 0"/>
+                                                        </PathSegmentCollection>
+                                                    </PathFigure.Segments>
+                                                </PathFigure>
+                                            </PathFigureCollection>
+                                        </PathGeometry.Figures>
+                                    </PathGeometry>
+                                </Path.Data>
+                            </Path>
+                        </VisualBrush.Visual>
+                    </VisualBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#A0AEC0"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+
+    </UserControl.Resources>
+    <StackPanel Style="{StaticResource MovieEntryStackPanel}">
+        <Image
+            x:Name="Image"
+            Source="https://image.tmdb.org/t/p/w300/aQvJ5WPzZgYVDrxLX4R6cLJCEaQ.jpg"
+            VerticalAlignment="Center" Height="425"
+            Stretch="UniformToFill" HorizontalAlignment="Center"
+                                           />
+
+        <TextBlock x:Name="MovieName" Text="sanic the bush-hog"/>
+        <TextBlock x:Name="Rating" Text="6.9" Margin="0, 5"/>
+        <TextBlock x:Name="ReleaseDate" Margin="0, 25, 0, 0" Foreground="Black" Text="6/9/420"/>
+    </StackPanel>
+</UserControl>
