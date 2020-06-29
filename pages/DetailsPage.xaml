@@ -4,11 +4,33 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:movie_list_ripoff.Controls"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      mc:Ignorable="d"
       Title="DetailsPage">
 
-    <Grid Background="Lime">
-        
+    <Page.Resources>
+        <Style TargetType="TextBlock" x:Key="Heading">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#edf2f7"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontFamily" Value="/resources/fonts/#Roboto Mono"/>
+            <Setter Property="FontWeight" Value="500"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </Page.Resources>
+    
+    <Grid Background="#0FFF0000" Width="1000" Height="500">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="0" Style="{StaticResource Heading}" Text="Mr. Peabody and sherman"/>
+        <TextBlock Grid.Column="1" Style="{StaticResource Heading}" Text="videos"/>
+
     </Grid>
 </Page>

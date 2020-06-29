@@ -3,6 +3,7 @@ using movie_list_ripoff.pages;
 using System;
 using System.Threading;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace movie_list_ripoff
@@ -13,7 +14,7 @@ namespace movie_list_ripoff
         {
             InitializeComponent();
 
-            MainContentFrame.Content = new StartupPage();
+            MainContentFrame.Content = new StartupPage(MainContentFrame);
         }
     }
 }

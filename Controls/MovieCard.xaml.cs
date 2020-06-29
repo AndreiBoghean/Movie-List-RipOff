@@ -15,17 +15,21 @@ using System.Windows.Shapes;
 
 namespace movie_list_ripoff.Controls
 {
-    /// <summary>
-    /// Interaction logic for MovieCard.xaml
-    /// </summary>
     public partial class MovieCard : UserControl
     {
-        public MovieCard(BitmapImage image, string name = "NAME NOT FOUND", string rating = "RATING NOT FOUND", string date = "DATE NOT FOUND")
+        Frame maincontentframe;
+        string id;
+        string type;
+        public MovieCard(Frame frame, BitmapImage image, string type, string id = "82703", string title = "sanic the bush-hog", string rating = "6.9|6.9", string date = "6/9/420")
         {
             InitializeComponent();
 
+            maincontentframe = frame;
+            this.id = id;
+            this.type = type;
+
             Image.Source = image;
-            MovieName.Text = name;
+            ObjectTitle.Text = title;
             Rating.Text = rating;
             ReleaseDate.Text = date;
         }
@@ -36,7 +40,7 @@ namespace movie_list_ripoff.Controls
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            maincontentframe.Content = new DetailsPage(maincontentframe, id, type);
         }
     }
 }

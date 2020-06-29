@@ -26,9 +26,9 @@ namespace movie_list_ripoff
         /// <returns></returns>
         public static dynamic GetItemFromApi(string category = "movie", string idOrType = "82703")
         {
-            string api = $"https://api.themoviedb.org/3/{category}/{idOrType}?api_key={key}&language=en-UK";
-            var qwe = client.GetStringAsync(api).Result;
-            return JsonConvert.DeserializeObject<dynamic>(qwe);
+            string ApiString = $"https://api.themoviedb.org/3/{category}/{idOrType}?api_key={key}&language=en-UK";
+            var ApiResponse = client.GetStringAsync(ApiString).Result;
+            return JsonConvert.DeserializeObject<dynamic>(ApiResponse);
         }
 
         /// <summary>

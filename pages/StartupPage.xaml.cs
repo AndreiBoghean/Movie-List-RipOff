@@ -21,7 +21,7 @@ namespace movie_list_ripoff.pages
     /// </summary>
     public partial class StartupPage : Page
     {
-        public StartupPage()
+        public StartupPage(Frame maincontentframe)
         {
             InitializeComponent();
             var movie = ApiMethods.GetItemFromApi("movie", "popular");
@@ -29,8 +29,12 @@ namespace movie_list_ripoff.pages
             foreach (var item in movie.results)
             {
                 MovieCard card = new MovieCard(
+                    frame: maincontentframe,
                     image: ApiMethods.GetImage((string)item.poster_path, "w500"),
-                    name: (string)item.original_title,
+
+                    id: (string)item.id,
+                    type: "movie",
+                    title: (string)item.original_title,
                     rating: (string)item.vote_average,
                     date: (string)item.release_date);
 
@@ -41,8 +45,12 @@ namespace movie_list_ripoff.pages
             foreach (var item in tvshows.results)
             {
                 MovieCard card = new MovieCard(
+                    frame: maincontentframe,
                     image: ApiMethods.GetImage((string)item.poster_path, "w500"),
-                    name: (string)item.original_name,
+
+                    id: (string)item.id,
+                    type: "tv",
+                    title: (string)item.original_name,
                     rating: (string)item.vote_average,
                     date: (string)item.first_air_date);
 

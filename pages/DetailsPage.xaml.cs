@@ -20,9 +20,10 @@ namespace movie_list_ripoff.Controls
     /// </summary>
     public partial class DetailsPage : Page
     {
-        public DetailsPage()
+        public DetailsPage(Frame frame, string id, string type)
         {
             InitializeComponent();
+            ApiMethods.GetItemFromApi(type, id);
         }
     }
 }

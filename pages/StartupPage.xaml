@@ -14,6 +14,8 @@
             <Setter Property="Padding" Value="5"/>
             <Setter Property="FontFamily" Value="/resources/fonts/#Roboto Mono"/>
             <Setter Property="FontWeight" Value="500"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="100, 50, 0, 0"/>
         </Style>
 
         <Style TargetType="ScrollViewer" x:Key="HorizontalScroll">
@@ -24,17 +26,13 @@
     </Page.Resources>
     
     <StackPanel>
-        <TextBlock Style="{StaticResource Heading}"
-                           Margin="100, 50, 0, 0"
-                           Text="Popular Movies" FontSize="20"/>
+        <TextBlock Style="{StaticResource Heading}" Text="Popular Movies"/>
 
         <ScrollViewer Style="{StaticResource HorizontalScroll}">
             <StackPanel Orientation="Horizontal" x:Name="PopularmoviesStackpanel"/>
         </ScrollViewer>
 
-        <TextBlock Style="{StaticResource Heading}"
-                           Margin="100, 50, 0, 0"
-                           Text="Popular TV shows" FontSize="20"/>
+        <TextBlock Style="{StaticResource Heading}" Text="Popular TV shows"/>
 
         <ScrollViewer Style="{StaticResource HorizontalScroll}">
             <StackPanel Orientation="Horizontal" x:Name="PopulaTVshowsStackpanel"/>
