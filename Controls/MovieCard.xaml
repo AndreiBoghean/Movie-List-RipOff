@@ -53,33 +53,36 @@
         </Style>
 
         <Style TargetType="Button">
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="Transparent"/>
-                    <Setter Property="BorderBrush" Value="Transparent"/>
-                </Trigger>
-            </Style.Triggers>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
 
     </UserControl.Resources>
 
-    <Button Background="Transparent" BorderThickness="0" Click="Button_Click">
+    <Button Click="Button_Click">
 
         <StackPanel Style="{StaticResource MovieEntryStackPanel}" Width="250" Height="550">
 
             <Grid>
                 <Image
-            x:Name="Image"
-            Source="https://image.tmdb.org/t/p/w500/aQvJ5WPzZgYVDrxLX4R6cLJCEaQ.jpg"
-            VerticalAlignment="Center" Height="425"
-            Stretch="UniformToFill" HorizontalAlignment="Center"
-                                           />
+                    x:Name="Image"
+                    Source="https://image.tmdb.org/t/p/w500/aQvJ5WPzZgYVDrxLX4R6cLJCEaQ.jpg"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Height="425" Stretch="UniformToFill"
+                />
                 <Button Width="50" Height="25"/>
             </Grid>
             
             <TextBlock x:Name="ObjectTitle" Text="sanic the bush-hog" Margin="0, 5, 0, 0"/>
-            <TextBlock x:Name="Rating" Text="6.9|6.9" Margin="0, -5, 0, 15"/>
-            <TextBlock x:Name="ReleaseDate" Foreground="Black" Text="6/9/420"/>
+            <TextBlock x:Name="Rating"      Text="6.9|6.9"            Margin="0, -5, 0, 15"/>
+            <TextBlock x:Name="ReleaseDate" Text="6/9/420"            Foreground="Black"/>
         </StackPanel>
     </Button>
     

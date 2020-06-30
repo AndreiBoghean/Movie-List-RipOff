@@ -12,6 +12,7 @@
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="#edf2f7"/>
             <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="25"/>
             <Setter Property="FontFamily" Value="/resources/fonts/#Roboto Mono"/>
             <Setter Property="FontWeight" Value="500"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -32,5 +33,8 @@
         <TextBlock Grid.Column="0" Style="{StaticResource Heading}" Text="Mr. Peabody and sherman"/>
         <TextBlock Grid.Column="1" Style="{StaticResource Heading}" Text="videos"/>
 
+        <StackPanel>
+            
+        </StackPanel>
     </Grid>
 </Page>

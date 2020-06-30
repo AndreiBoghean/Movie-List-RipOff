@@ -16,7 +16,7 @@ namespace movie_list_ripoff
     public static class ApiMethods
     {
         static HttpClient client = new HttpClient();
-        static string key = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\txtapikey.txt");
+        static string key = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\apikey.txt");
 
         /// <summary>
         /// gets api <see cref="String"/> from https://api.themoviedb.org/3/<paramref name="category"/>/<paramref name="idOrType"/>?(API KEY + LANG) and returns dynamic class
