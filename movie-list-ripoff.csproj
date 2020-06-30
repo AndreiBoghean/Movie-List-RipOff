@@ -43,6 +43,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
@@ -137,7 +138,21 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Resource Include="resources\fonts\RobotoMono-Medium.ttf" />
+    <Resource Include="resources\fonts\RobotoMono\presets\RobotoMono-Bold.ttf" />
+    <Resource Include="resources\fonts\RobotoMono\presets\RobotoMono-BoldItalic.ttf" />
+    <Resource Include="resources\fonts\RobotoMono\presets\RobotoMono-ExtraLight.ttf" />
+    <Resource Include="resources\fonts\RobotoMono\presets\RobotoMono-ExtraLightItalic.ttf" />
+    <Resource Include="resources\fonts\RobotoMono\presets\RobotoMono-Italic.ttf" />
+    <Resource Include="resources\fonts\RobotoMono\presets\RobotoMono-Light.ttf" />
+    <Resource Include="resources\fonts\RobotoMono\presets\RobotoMono-LightItalic.ttf" />
+    <Resource Include="resources\fonts\RobotoMono\presets\RobotoMono-Medium.ttf" />
+    <Resource Include="resources\fonts\RobotoMono\presets\RobotoMono-MediumItalic.ttf" />
+    <Resource Include="resources\fonts\RobotoMono\presets\RobotoMono-Regular.ttf" />
+    <Resource Include="resources\fonts\RobotoMono\presets\RobotoMono-SemiBold.ttf" />
+    <Resource Include="resources\fonts\RobotoMono\presets\RobotoMono-SemiBoldItalic.ttf" />
+    <Resource Include="resources\fonts\RobotoMono\presets\RobotoMono-Thin.ttf" />
+    <Resource Include="resources\fonts\RobotoMono\presets\RobotoMono-ThinItalic.ttf" />
+    <Resource Include="resources\fonts\RobotoMono\RobotoMono-VariableFont_wght.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

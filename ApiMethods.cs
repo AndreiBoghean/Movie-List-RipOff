@@ -35,7 +35,7 @@ namespace movie_list_ripoff
         /// gets <see cref="BitmapImage"/> from https://image.tmdb.org/t/p/<paramref name="dimensions"/>/<paramref name="extension"/>
         /// </summary>
         /// <param name="extension">the extension at the end of the link that is used to identify the image</param>
-        /// <param name="dimensions">the dimensions for the image, (w600_and_h900)</param>
+        /// <param name="dimensions">the dimensions for the image, ("w45", "w92", "w154", "w185", "w300", "w342", "w500", "w780", "w1280", "original", "h632")</param>
         /// <returns></returns>
         public static BitmapImage GetImage(string extension, string dimensions = "original")
         {

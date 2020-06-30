@@ -5,24 +5,34 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:movie_list_ripoff.Controls"
       mc:Ignorable="d"
-      Title="DetailsPage">
+      Title="DetailsPage" Width="1903"  Height="550">
 
     <Page.Resources>
         <Style TargetType="TextBlock" x:Key="Heading">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="#edf2f7"/>
-            <Setter Property="Padding" Value="5"/>
-            <Setter Property="FontSize" Value="25"/>
-            <Setter Property="FontFamily" Value="/resources/fonts/#Roboto Mono"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="/resources/fonts/RobotoMono/#Roboto Mono"/>
             <Setter Property="FontWeight" Value="500"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
         </Style>
+        
+        <Style TargetType="TextBlock">
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="#edf2f7"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="/resources/fonts/RobotoMono/#Roboto Mono"/>
+            <Setter Property="FontWeight" Value="500"/>
+        </Style>
     </Page.Resources>
-    
-    <Grid Background="#0FFF0000" Width="1000" Height="500">
+
+    <Grid Background="#0FFF0000">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -30,11 +40,19 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Column="0" Style="{StaticResource Heading}" Text="Mr. Peabody and sherman"/>
-        <TextBlock Grid.Column="1" Style="{StaticResource Heading}" Text="videos"/>
+        <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource Heading}" Text="Mr. Peabody and sherman"/>
+        <TextBlock Grid.Column="2" Grid.Row="0"                     Style="{StaticResource Heading}" Text="videos"/>
 
-        <StackPanel>
-            
+        <Image Grid.Column="0" Grid.Row="1" Source="https://image.tmdb.org/t/p/w780/aQvJ5WPzZgYVDrxLX4R6cLJCEaQ.jpg"
+               Margin="25, 0, 0, 25"
+               />
+
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <TextBlock Margin="10">
+                Based on the global blockbuster videogame franchise from Sega, Sonic the Hedgehog tells the story of the world’s speediest hedgehog as he embraces his new home on Earth. In this live-action adventure comedy, Sonic and his new best friend team up to defend the planet from the evil genius Dr. Robotnik and his plans for world domination.
+            </TextBlock>
+
+            <TextBlock />
         </StackPanel>
     </Grid>
 </Page>

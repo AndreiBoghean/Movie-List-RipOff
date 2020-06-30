@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DrawnImage = System.Drawing.Image;
 
 namespace movie_list_ripoff.Controls
 {
@@ -24,6 +26,6 @@ namespace movie_list_ripoff.Controls
         {
             InitializeComponent();
             ApiMethods.GetItemFromApi(type, id);
-        }
+        } 
     }
 }
