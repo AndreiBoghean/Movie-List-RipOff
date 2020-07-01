@@ -81,7 +81,7 @@
                 <Button Width="50" Height="25"/>
             </Grid>
             
-            <TextBlock x:Name="ObjectTitle" Text="sanic the bush-hog" Margin="0, 5, 0, 0" Width="225" Height="auto" TextAlignment="Center"/>
+            <TextBlock x:Name="ObjectTitle" Text="sanic the bush-rat" Margin="0, 5, 0, 0" Width="225" Height="auto" TextAlignment="Center"/>
             <TextBlock x:Name="Rating"      Text="6.9|6.9"            Margin="0, -5, 0, 15"/>
             <TextBlock x:Name="ReleaseDate" Text="6/9/420"            Foreground="Black"/>
         </StackPanel>
