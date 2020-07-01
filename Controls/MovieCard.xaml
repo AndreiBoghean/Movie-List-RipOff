@@ -47,7 +47,7 @@
             <Setter Property="TextWrapping" Value="Wrap"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="Foreground" Value="#A0AEC0"/>
-            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontSize" Value="15"/>
             <Setter Property="Padding" Value="5"/>
             <Setter Property="FontFamily" Value="/resources/fonts/RobotoMono/#Roboto Mono"/>
             <Setter Property="FontWeight" Value="500"/>
@@ -71,19 +71,28 @@
 
         <StackPanel Style="{StaticResource MovieEntryStackPanel}" Width="250" Height="550">
 
-            <Grid>
                 <Image
                     x:Name="Image"
                     Source="https://image.tmdb.org/t/p/w500/aQvJ5WPzZgYVDrxLX4R6cLJCEaQ.jpg"
                     HorizontalAlignment="Center" VerticalAlignment="Center"
                     Height="425" Stretch="UniformToFill"
                 />
-                <Button Width="50" Height="25"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel>
+                    <TextBlock x:Name="ObjectTitle" Text="sanic the bush-rat" Margin="0, 5, 0, 0" Width="225" Height="auto" TextAlignment="Center"/>
+                    <TextBlock x:Name="Rating"      Text="6.9|6.9"            Margin="0, -5, 0, 0"/>
+                </StackPanel>
+
+                <TextBlock x:Name="ReleaseDate" Text="6/9/420"
+                           Grid.Row="1" Padding="0"
+                       Foreground="Black" VerticalAlignment="Bottom"
+                       FontWeight="Normal" FontSize="17"
+            />
             </Grid>
-            
-            <TextBlock x:Name="ObjectTitle" Text="sanic the bush-rat" Margin="0, 5, 0, 0" Width="225" Height="auto" TextAlignment="Center"/>
-            <TextBlock x:Name="Rating"      Text="6.9|6.9"            Margin="0, -5, 0, 15"/>
-            <TextBlock x:Name="ReleaseDate" Text="6/9/420"            Foreground="Black"/>
         </StackPanel>
     </Button>
     

@@ -21,10 +21,9 @@ namespace movie_list_ripoff.Controls
         public DetailsPage(Frame frame, string id, string type)
         {
             InitializeComponent();
-            //var details = ApiMethods.GetItemFromApi(type, id);
-            var details = ApiMethods.GetItemFromApi("person", "6384");
+            dynamic details = ApiMethods.GetItemFromApi(type, id);
 
-            switch ("person")
+            switch (type)
             {
                 case("movie"):
                     title.Text = (string)details.title;
@@ -49,11 +48,19 @@ namespace movie_list_ripoff.Controls
                     TextBlock1.Text = "born in: " + (string)details.place_of_birth;
                     TextBlock2.Text = "birth date: " + (string)details.birthday;
 
-                    if ( (string)details.deathday != "")
-                    { TextBlock3.Text = "dead: " + (string)details.deathday; }
-                    else
-                    { TextBlock3.Text = "dead: not yet."; }
-                    break;
+                    if ((string)details.deathday != null) { TextBlock3.Text = "dead: " + (string)details.deathday; }
+                    else { TextBlock3.Text = "dead: not yet."; } break;
+            }
+
+            dynamic credits = ApiMethods.GetItemFromApi(type, id + "/credits");
+
+            foreach (var person in credits.cast)
+            {
+                CastStackPanel.Children.Add(new PersonCard(
+                    img: ApiMethods.GetImage((string)person.profile_path, "w400"),
+                    field1: (string)person.character,
+                    field3: (string)person.name
+                    ));
             }
         }
     }
