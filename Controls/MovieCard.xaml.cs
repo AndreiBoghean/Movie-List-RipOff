@@ -17,14 +17,14 @@ namespace movie_list_ripoff.Controls
 {
     public partial class MovieCard : UserControl
     {
-        Frame maincontentframe;
+        Frame frame;
         string id;
         string type;
         public MovieCard(Frame frame, BitmapImage image, string type, string id = "82703", string title = "sanic the bush-hog", string rating = "6.9|6.9", string date = "6/9/420")
         {
             InitializeComponent();
 
-            maincontentframe = frame;
+            this.frame = frame;
             this.id = id;
             this.type = type;
 
@@ -40,7 +40,7 @@ namespace movie_list_ripoff.Controls
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            maincontentframe.Content = new DetailsPage(maincontentframe, id, type);
+            frame.Content = new DetailsPage(frame, id, type);
         }
     }
 }

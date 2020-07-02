@@ -24,9 +24,9 @@ namespace movie_list_ripoff
         /// <param name="category">the item to get (movie, tv, actor)</param>
         /// <param name="idOrType">the id or type of thing to get (latest, now_playing, popular, top_rated, upcoming)</param>
         /// <returns></returns>
-        public static dynamic GetItemFromApi(string category = "movie", string idOrType = "82703")
+        public static dynamic GetItemFromApi(string category, string idOrType, string OptionalParam = "")
         {
-            string ApiString = $"https://api.themoviedb.org/3/{category}/{idOrType}?api_key={key}&language=en-UK";
+            string ApiString = $"https://api.themoviedb.org/3/{category}/{idOrType}{OptionalParam}?api_key={key}&language=en-UK";
             var ApiResponse = client.GetStringAsync(ApiString).Result;
             return JsonConvert.DeserializeObject<dynamic>(ApiResponse);
         }

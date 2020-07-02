@@ -22,7 +22,7 @@ namespace movie_list_ripoff.Controls
         {
             InitializeComponent();
             dynamic details = ApiMethods.GetItemFromApi(type, id);
-
+            
             switch (type)
             {
                 case("movie"):
@@ -52,15 +52,59 @@ namespace movie_list_ripoff.Controls
                     else { TextBlock3.Text = "dead: not yet."; } break;
             }
 
-            dynamic credits = ApiMethods.GetItemFromApi(type, id + "/credits");
-
-            foreach (var person in credits.cast)
+            if (type != "person")
             {
-                CastStackPanel.Children.Add(new PersonCard(
-                    img: ApiMethods.GetImage((string)person.profile_path, "w400"),
-                    field1: (string)person.character,
-                    field3: (string)person.name
-                    ));
+                dynamic credits = ApiMethods.GetItemFromApi(type, id, "/credits");
+
+                foreach (var person in credits.cast)
+                {
+                    BitmapImage image = new BitmapImage(new Uri(@"https://www.praxisemr.com/images/testimonials_images/dr_profile.jpg"));
+
+                    if ((string)person.profile_path != null)
+                    { image = ApiMethods.GetImage((string)person.profile_path, "w400"); }
+
+                    CastStackPanel.Children.Add(new
+                        PersonCard(
+                        frame: frame,
+                        id: (string)person.id,
+                        type: "person",
+                        img: image,
+                        field1: (string)person.name,
+                        field3: (string)person.character
+                        ));
+                }
+                foreach (var person in credits.crew)
+                {
+                    BitmapImage image = new BitmapImage(new Uri(@"https://www.praxisemr.com/images/testimonials_images/dr_profile.jpg"));
+
+                    if ((string)person.profile_path != null)
+                    { image = ApiMethods.GetImage((string)person.profile_path, "w400"); }
+
+                    CrewStackPanel.Children.Add(new PersonCard(
+                        frame: frame,
+                        id: (string)person.id,
+                        type: "person",
+                        img: image,
+                        field1: (string)person.name,
+                        field2: "",
+                        field3: (string)person.job
+                        ));
+                }
+
+                dynamic recommendations = ApiMethods.GetItemFromApi(type, id, "/recommendations");
+
+                foreach (var item in recommendations.results)
+                {
+                    RecomendationsStackPanel.Children.Add(new PersonCard(
+                        frame: frame,
+                        id: (string)item.id,
+                        type: id,
+                        img: ApiMethods.GetImage((string)item.poster_path, "w400"),
+                        field1: (string)item.original_title,
+                        field2: (string)item.vote_average + "/10",
+                        field3: (string)item.release_date
+                        ));
+                }
             }
         }
     }

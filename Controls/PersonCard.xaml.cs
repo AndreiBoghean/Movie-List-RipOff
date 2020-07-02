@@ -17,13 +17,24 @@ namespace movie_list_ripoff.Controls
 {
     public partial class PersonCard : UserControl
     {
-        public PersonCard(BitmapImage img, string field1 = "NAME NOT FOUND", string field2 = "as", string field3 = "ROLE NOT FOUND")
+        Frame frame;
+        string id;
+        string type;
+        public PersonCard(Frame frame, string id, string type, BitmapImage img, string field1 = "NAME NOT FOUND", string field2 = "as", string field3 = "ROLE NOT FOUND")
         {
+            this.frame = frame;
+            this.id = id;
+            this.type = type;
             InitializeComponent();
             image.Source = img;
             TextBlock1.Text = field1;
             TextBlock2.Text = field2;
             TextBlock3.Text = field3;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            frame.Content = new DetailsPage(frame, id, type);
         }
     }
 }
