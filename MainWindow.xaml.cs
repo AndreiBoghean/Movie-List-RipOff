@@ -19,9 +19,20 @@ namespace movie_list_ripoff
             MainContentFrame.Content = startupPage;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Title_Click(object sender, RoutedEventArgs e)
         {
             MainContentFrame.Content = startupPage;
+        }
+
+        private void Search_Click(object sender, RoutedEventArgs e)
+        {
+            if (SearchTextbox.Text == "") return;
+            MainContentFrame.Content = new SearchPage(MainContentFrame, SearchTextbox.Text);
+        }
+
+        private void Corporate_click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

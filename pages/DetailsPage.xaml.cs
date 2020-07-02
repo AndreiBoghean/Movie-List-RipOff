@@ -106,6 +106,12 @@ namespace movie_list_ripoff.Controls
                         ));
                 }
             }
+            else
+            {
+                CastPanel.Visibility = Visibility.Collapsed;
+                CrewPanel.Visibility = Visibility.Collapsed;
+                RecomendationsPanel.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

@@ -30,7 +30,6 @@ namespace movie_list_ripoff
             var ApiResponse = client.GetStringAsync(ApiString).Result;
             return JsonConvert.DeserializeObject<dynamic>(ApiResponse);
         }
-
         /// <summary>
         /// gets <see cref="BitmapImage"/> from https://image.tmdb.org/t/p/<paramref name="dimensions"/>/<paramref name="extension"/>
         /// </summary>
@@ -40,6 +39,12 @@ namespace movie_list_ripoff
         public static BitmapImage GetImage(string extension, string dimensions = "original")
         {
             return new BitmapImage(new Uri("https://image.tmdb.org/t/p/" + dimensions + extension));
+        }
+        public static dynamic SearchFor(string SearchParamater)
+        {
+            string ApiString = $"https://api.themoviedb.org/3/search/multi?api_key=8efdaa19d0efdf1cba2b2f8d7dae3ed8&query={SearchParamater}&include_adult=true";
+            var ApiResponse = client.GetStringAsync(ApiString).Result;
+            return JsonConvert.DeserializeObject<dynamic>(ApiResponse);
         }
     }
 }
