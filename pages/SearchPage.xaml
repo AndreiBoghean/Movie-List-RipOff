@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="SearchPage">
 
-    <Grid x:Name="Results_Grid">
+    <Grid x:Name="Results_Grid" HorizontalAlignment="Center">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

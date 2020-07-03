@@ -25,26 +25,27 @@ namespace movie_list_ripoff.pages
         {
             get
             {
-                if (CurCol >= 9)
+                if (CurCol >= 8)
                 {
-                    Results_Grid.RowDefinitions.Add(new RowDefinition());
                     CurCol = 0;
+                    Results_Grid.RowDefinitions.Add(new RowDefinition());
+                    CurRow++;
                 }
+
                 return CurCol++;
             }
-            set { CurCol = value; }
         }
 
         int CurRow = 0;
         private int CurrentRow
         {
             get { return CurRow; }
-            set { CurRow = value; }
         }
 
         public SearchPage(Frame frame, string SearchParam)
         {
             InitializeComponent();
+            Results_Grid.RowDefinitions.Add(new RowDefinition());
 
             var SearchResults = ApiMethods.SearchFor(SearchParam);
             foreach (var result in SearchResults.results)
@@ -63,9 +64,9 @@ namespace movie_list_ripoff.pages
                             field2: "rating:",
                             field3: (string)result.vote_average
                             );
-                        Grid.SetColumn(Movie_Card, CurrentColumn);
-                        Grid.SetColumn(Movie_Card, CurrentRow);
-                        Results_Grid.Children.Add(Movie_Card);
+                        Movie_Card.Margin = new Thickness(5);
+                        Movie_Card.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3c366b"));
+                        AddToGrid(Movie_Card, CurrentColumn, CurrentRow);
                         break;
                     case ("tv"):
                         BitmapImage TV_Image = ApiMethods.GetImage((string)result.backdrop_path, "w400");
@@ -79,9 +80,9 @@ namespace movie_list_ripoff.pages
                             field2: "rating:",
                             field3: (string)result.vote_average
                             );
-                        Grid.SetColumn(Tv_Card, CurrentColumn);
-                        Grid.SetColumn(Tv_Card, CurrentRow);
-                        Results_Grid.Children.Add(Tv_Card);
+                        Tv_Card.Margin = new Thickness(5);
+                        Tv_Card.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3c366b"));
+                        AddToGrid(Tv_Card, CurrentColumn, CurrentRow);
                         break;
                     case ("person"):
                         BitmapImage DefaultImage = new BitmapImage(new Uri(@"https://www.praxisemr.com/images/testimonials_images/dr_profile.jpg"));
@@ -97,13 +98,19 @@ namespace movie_list_ripoff.pages
                             field2: "Known for:",
                             field3: (string)result.known_for_department
                             );
-                        Grid.SetColumn(person_Card, CurrentColumn);
-                        Grid.SetColumn(person_Card, CurrentRow);
-                        Results_Grid.Children.Add(person_Card);
+                        person_Card.Margin = new Thickness(5);
+                        person_Card.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3c366b"));
+                        AddToGrid(person_Card, CurrentColumn, CurrentRow);
                         break;
                 }
                 Console.WriteLine(Results_Grid.Children.Count);
             }
+        }
+        void AddToGrid(UIElement element, int column, int row)
+        {
+            Grid.SetColumn(element, column);
+            Grid.SetRow(element, row);
+            Results_Grid.Children.Add(element);
         }
     }
 }

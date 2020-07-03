@@ -93,7 +93,9 @@
                     <Border Style="{StaticResource ButtonBorder}" CornerRadius="15" BorderThickness="2" Width="300" Height="25"
                             BorderBrush="White" Background="Transparent">
                         
-                        <TextBox x:Name="SearchTextbox" Background="Transparent" BorderThickness="0"/>
+                        <TextBox x:Name="SearchTextbox"
+                                 Background="Transparent" BorderThickness="0"
+                                 VerticalAlignment="Center" FontSize="15"/>
                     </Border>
 
                     <Border Style="{StaticResource ButtonBorder}" Margin="-5, 25, 30, 0">
